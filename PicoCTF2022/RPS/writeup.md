@@ -8,7 +8,7 @@ The description tells us that this is a rock/paper/scissors game program. We sta
 
 ![image](images/play.png)
 
-The function asks us to choose between rock, paper and scissors. It takes our input and puts it in the *player_turn* array that it defined at the beginning of the function. It also uses two other arrays : *hands* and *loses*. They are both character pointers arrays. The first one contains the pointers to the strings "rock", "paper" and "scissors". The second contains the pointers to the same strings, but in a different order, so that every string in *hands* is allineated with the corresponding losing string in the *loses* array.
+The function asks us to choose between rock, paper and scissors. It takes our input and puts it in the *player_turn* array that it defined at the beginning of the function. It also uses two other arrays : *hands* and *loses*. They are both character pointers arrays. The first one contains pointers to the strings "rock", "paper" and "scissors". The second contains pointers to the same strings, but in a different order, so that every string in *hands* is allineated with the corresponding losing string in the *loses* array.
 
 ![image](images/hands_loses.png)
 
@@ -16,7 +16,7 @@ The function asks us to choose between rock, paper and scissors. It takes our in
 
 ![image](images/strstr_man.png)
 
-This function *"... finds the first occurrence of the substring needle*(the first supplied string) *in the string haystack*(the second supplied string)*..."*. It then *"... returns a pointer to the located substring or NULL if the substring is not found"*. So what happens is that our choice and the computer choice (which is picked from the *loses* array using the *computer_turn* index) get printed onto the screen. Then the program takes a string from the *losing* array using the same random index. That is the string that beats the one the computer chose. If it's equal to our string, we won the match. So we need to supply a string which will always contain whatever string the computer chooses from the *loses* array. The string we want could be, for example, "rockpaperscissors". In this way, the function will always return a pointer and we'll always win the match, regardless of our opponent choice. If we do it 5 times in a row, we get the flag. Let's connect with netcat to try this out.
+This function *"... finds the first occurrence of the substring needle*(the first supplied string) *in the string haystack*(the second supplied string)*..."*. It then *"... returns a pointer to the located substring or NULL if the substring is not found"*. So what happens is that our choice and the computer choice (which is picked from the *loses* array using the *computer_turn* index) get printed onto the screen. Then the program takes a string from the *losing* array using the same random index. That is the string that beats the one the computer chose. If it's equal to the string we inserted, then we won the match. So we need to supply a string which will always contain whatever string the computer chooses from the *loses* array. The string we want could be, for example, "rockpaperscissors". In this way, the function will always return a pointer and we'll always win the match, regardless of our opponent choice. If we do it 5 times in a row, we get the flag. Let's connect with netcat to try this out.
 
 ![image](images/flag.png)
 
